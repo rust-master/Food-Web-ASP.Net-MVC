@@ -17,6 +17,7 @@ Functionalities:
 - Customer Side
 - Optimized Search
 
-Language: C#
-Database: Microsoft SQL Server
-Frameworks: .Net, Entity Framework
+Tools & Technologies:
+- Language: C#
+- Database: Microsoft SQL Server
+- Frameworks: .Net, Entity Framework
