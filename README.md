@@ -1,3 +1,3 @@
 # Food Web ASP.Net MVC
 
-<imgr src="S8Screen.PNG" />
+<img src="S8Screen.PNG" />
