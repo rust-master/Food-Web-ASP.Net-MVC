@@ -1,0 +1,185 @@
+/*****************************
+03 - Base - Typhography
+*****************************/
+/*...::: Font Weight :::... */
+.font{
+    &--light{font-weight: 300;}
+
+    &--regular{font-weight: 400;}
+
+    &--medium{font-weight: 500;}
+
+    &--semi-bold{font-weight: 600;}
+
+    &--bold{font-weight: 700;}
+
+    &--xbold{font-weight: 800;}
+
+    &--black{font-weight: 800;}
+}
+
+/*...::: Title - Font Style :::...*/
+.title{
+    display: block;
+    line-height: 1;
+
+    // Hero Section - Font Size
+    &__hero{
+        &--tiny{font-size: 16px;}
+        &--small{
+            font-size: 20px;
+            @include breakpoint(medium){font-size: 24px;}
+        }
+        &--xlarge{
+            font-size: 25px;
+            line-height: 25px;
+            @include breakpoint(small){
+                font-size: 25px;
+                line-height: 25px;
+            }
+            @include breakpoint(medium){
+                font-size: 63px;
+                line-height: 63px;
+            }
+            @include breakpoint(large){
+                font-size: 63px;
+                line-height: 63px;
+            }
+            @include breakpoint(xlarge){
+                font-size: 63px;
+                line-height: 63px;
+            }
+            @include breakpoint(xxlarge){
+                font-size: 63px;
+                line-height: 63px;
+            }
+        }
+
+    }
+
+}
+
+
+// Section Content
+.section-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    &__title{
+        font-size: 25px;
+        line-height:35px;
+        color: $color-black-1;
+        font-weight: 400;
+        text-transform: capitalize;
+        // margin-top: -10px;
+        @include breakpoint(medium){
+            font-size: 36px;
+            line-height: 36px;
+        }
+
+    }
+
+    &__desc{
+        margin-top: 5px;
+        color: #888;
+        font-size: 14px;
+        transition: $transition3ms;
+        text-decoration: none;
+        display: inline-block;
+
+        
+    }
+
+    &--border{
+        padding-bottom: 28px;
+        border-bottom:1px solid $color-white-3;
+
+        @include breakpoint(large){
+            padding-bottom: 20px;
+        } 
+    }
+
+    &__inner{
+        margin-bottom: 30px;
+        @include breakpoint(small){margin-bottom: 30px;}
+        @include breakpoint(medium){ margin-bottom: 50px;}
+        @include breakpoint(large){ margin-bottom: 60px;}
+        h2{
+            display: inline-block;
+            margin-bottom: 0;
+            text-transform: capitalize;
+            position: relative;
+            font-family: "Lora", serif;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 20px;
+            margin-bottom: 30px;
+            @include breakpoint(small){
+                font-size: 19px;
+                line-height: 20px;
+            }
+            @include breakpoint(medium){
+                font-size: 33px;
+                line-height: 37px;
+            }
+            @include breakpoint(large){
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            &::after{
+                position: absolute;
+                content: "";
+                width: 80px;
+                height: 2px;
+                background: #222222;
+                bottom: -35px;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+        }
+    }
+}
+
+.block-quote{
+    margin-left: 80px;
+    color: $color-gray;
+    background: $color-white-1;
+    border-left: 5px solid $color-green;
+    padding: 15px 30px;
+    margin: 30px 0 30px 40px;
+    text-align: justify;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.para__text{
+    font-size: 14px;
+    margin: 20px 0 20px 0;
+    &:last-child{
+        margin: 20px 0 0 0;
+    }
+}
+
+.text{
+    &--gray{color: $color-gray}
+
+    &-area{
+        margin-bottom: 60px;
+        &:last-child{margin-bottom: 0}
+        @include breakpoint(medium){margin-bottom: 80px}
+        @include breakpoint(large){margin-bottom: 100px}
+        h5{margin-bottom: 30px}
+
+    }
+    &-underline{
+        text-decoration: underline;
+    }
+}
+
+.letter-spacing{
+    &--4{letter-spacing: 4px;}
+}

@@ -1,0 +1,65 @@
+﻿@model FoodWeb.Models.SignupLogin
+
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-content m-b-40">
+                    <h5 class="section-content__title text-center">Register Yourself</h5>
+                </div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="login-form-container">
+                    <h5 class="sidebar__title">Register</h5>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="login-register-form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="text-danger">@ViewBag.Message</div>
+                            <form>
+                                <div class="form-box__single-group">
+                                    <label for="form-register-username">Name *</label>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-box__single-group">
+                                    <label for="form-uregister-sername-email">Email address *</label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-box__single-group m-b-20">
+                                    <label for="form-register-username-password">Password *</label>
+                                    <div class="password__toggle">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @id = "form-register-username-password" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        <span data-toggle="#form-register-username-password" class="password__toggle--btn fa fa-fw fa-eye"></span>
+                                    </div>
+                                </div>
+                                <div class="form-box__single-group m-b-20">
+                                    <label for="form-register-username-password">Confirm Password *</label>
+                                    <div class="password__toggle">
+                                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @id = "form-register-username-confrm-password" } })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                        <span data-toggle="#form-register-username-confrm-password" class="password__toggle--btn fa fa-fw fa-eye"></span>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">REGISTER</button>
+                            </form>
+                        </div>
+                    }
+                    <br>
+                    <a class="link--gray" href="@Url.Action("Login","User")">If you already registered? Login Here.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> 

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<FoodWeb.Models.Order>
+
+@{
+    ViewBag.Title = "ListOfOrders";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            List Of Orders
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Orders</li>
+        </ol>
+    </section>
+    <section class="content">
+
+        <div class="row">
+            <div class="col-md-8">
+                <!-- TABLE: LATEST ORDERS -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Latest Orders</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Item Name</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Sub Total</th>
+                                        <th>Order Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => item.invoices.ID)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.prodcts.ProductName)</td>
+                                            <td><span class="label label-success">@Html.DisplayFor(modelItem => item.Qty)</span></td>
+                                            <td>@Html.DisplayFor(modelItem => item.Unit_Price)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Order_Bill)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.Order_Date)</td>
+                                        </tr>
+                                    }
+                                    </tbody>
+                            </table>
+                        </div><!-- /.table-responsive -->
+                    </div><!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <h2 class="pull-right">Total: @TempData["OrderTotal"]</h2>
+                    </div><!-- /.box-footer -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>

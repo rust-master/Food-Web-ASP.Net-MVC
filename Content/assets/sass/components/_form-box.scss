@@ -1,0 +1,165 @@
+/*****************************
+21 - Component - Form
+*****************************/
+.form-box{
+	&__single-group{
+		display: flex;
+		flex-direction: column;
+		margin-top: 25px;
+
+		label{
+            margin-bottom: 15px;
+			font-size: 14px;
+			font-weight: 600;
+			text-align: left;
+		}
+
+		input, textarea, select{
+			border: 1px solid $color-white-3;
+			border-radius: 3px;
+			padding: 10px 20px;
+			width: 100%;
+			outline: none;
+			font-size: 14px;
+		}
+	}
+}
+
+select{
+    outline: none;
+    border: 1px solid $color-gray-1;
+    padding: 5px 15px;
+    
+}
+
+label > span{
+    display: inline-block;
+    padding-left: 30px;
+    font-weight: 400;
+}
+// Color Select
+.product-color{
+    &-select{
+        position: relative;
+        appearance: none;
+    }
+
+    &-select::after{
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+    }
+
+    &-select:checked::after{
+        content: "\f00c" !important;
+        color: $color-white;
+    }
+
+    &-select[value="color-red"]::after{
+        background: $color-youtube !important;
+    }
+    &-select[value="color-green"]::after{
+        background: $color-green !important;
+    }
+    &-select[value="color-blue"]::after{
+        background: $color-primary !important;
+    }
+}
+
+input[type=checkbox] {
+    appearance: none;
+    position: relative;
+
+    &::after{
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-white-3;
+        top: -15px;
+        line-height: 20px;
+        background: $color-white;
+        text-align: center;
+        transition: all .3s ease;
+    }
+}
+
+
+input[type=checkbox]:checked::after{
+    content: "\f00c";
+    font-family: "Font Awesome 5 Light";
+    color: $color-white;
+    background: $color-green;
+}
+
+
+input[type=radio].shipping-select::after{
+        position: absolute;
+		content: "\f111";
+		font-family: "Font Awesome 5 Free";
+		background: $color-white;
+        text-align: center;
+		transition: all .3s ease;
+		top: -20px;
+        color: $color-green;
+        font-size: 20px;
+}
+
+input[type=radio].shipping-select:checked::after{
+    content: "\f058";
+}
+
+input[type=radio] {
+    appearance: none;
+    position: relative;
+
+    &::after{
+        position: absolute;
+		content: "";
+		font-family: "Font Awesome 5 Free";
+		background: $color-white;
+        text-align: center;
+		transition: all .3s ease;
+		top: -17px;
+		color: $color-white;
+    }
+}
+
+input[type=radio]:checked::after{
+	content: "\f058";
+}
+
+.from-box__buttons {
+    flex-direction: column;
+    align-items: flex-start !important;
+    @include breakpoint(small){
+        flex-direction: row;
+    }
+}
+
+.form-box-right{
+    margin-top: 25px;
+    @include breakpoint(small){
+        margin-top: 0;
+    }
+}
+
+.password__toggle {
+    display: flex;
+    align-items: center;
+    &--btn{margin-left: -25px;}
+}
+
+input.round-input {
+    border-radius: 30px;
+}
+
+.round-input-btn {
+    right: 0;
+    width: 45px;
+    height: 100%;
+    border-radius: 0px 25px 25px 0px;
+    &:hover{color: $color-green;}
+}
+

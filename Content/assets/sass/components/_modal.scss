@@ -1,0 +1,110 @@
+/*****************************
+13 - Component - Modal
+*****************************/
+
+.modal{
+    z-index: 99999;
+    background: rgba($color-black-1, .5);
+    &-product-image--large{margin-bottom: 20px;}
+    &-dialog{
+        max-width: calc(100% - 20px) !important;
+        margin: 0 auto !important;
+
+        @include breakpoint(medium){
+            max-width: 730px !important;
+        }
+        @include breakpoint(large){
+            max-width: 870px !important;
+        }
+        @include breakpoint(xlarge){
+            min-width: 825px !important;
+        }
+    }
+    
+    padding-right: 0 !important;
+    // Modal Top
+    &-header{
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        background: $color-silver;
+        color: $color-white;
+
+        @include breakpoint(large){
+            padding: 0;
+        }
+
+        & .close{
+            margin: 0 !important;
+            color: $color-white;
+        }
+    }
+
+    &-title{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    // Modal Body
+    &__border{
+        border-left:none;
+
+        @include breakpoint(large){
+            border-left: 1px solid #ddd;
+        }
+    }
+
+    &__product-img{
+        text-align: center;
+    }
+    &__product-title{
+        margin-top: 25px;
+        @include breakpoint(medium){
+            margin-top: 0px;
+        }
+    }
+    &__product-title,
+    &__product-price{
+        display: block;
+        font-weight: 500
+    }
+
+    &__product-info,
+    &__product-shipping-info{
+        font-weight: 500;
+        li{
+            margin-bottom: 10px;
+            &:last-child{margin-bottom: 0;}
+        }
+        span{
+            font-weight: 300;
+            padding-left: 5px;
+        }
+    }
+
+    &__product-cart-buttons{
+        display: flex;
+        flex-direction: column;
+        a{
+            margin-bottom: 15px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        
+
+        @include breakpoint(medium){
+            flex-direction: row;
+            a{
+                margin-bottom: 0;
+                margin-right: 30px;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,52 @@
+/*****************************
+11 - Component - Testimonial
+*****************************/
+.newsletter{
+    &__bg img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 240px;
+        @include breakpoint(medium){
+            height: 255px;
+        }
+        @include breakpoint(large){
+            height: 360px;
+        }
+        @include breakpoint(xlarge){
+            height: auto;
+        }
+    }
+}
+.newsletter__form-content{
+    label {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        color: $color-gray;
+        font-size: 26px;
+    }
+
+    input {
+        width: 100%;
+        background: transparent;
+        border-bottom: 1px solid;
+        padding: 15px 83px 15px 30px;
+        font-size: 13px;
+        @include breakpoint(medium){
+            font-size: 16px;
+            padding: 15px 115px 15px 45px;
+        }
+    }
+
+    button {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        background: transparent;
+        font-size: 14px;
+        font-weight: 500;
+        color: $color-gray;
+        &:hover{color: $color-green;}
+    }
+} 

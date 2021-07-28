@@ -1,0 +1,99 @@
+/*****************************
+15 - Component - Shop Sorting
+*****************************/
+.sort-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    flex-direction: column;
+    border: 1px solid $color-white-3;
+    padding: 15px 30px;
+    @include breakpoint(medium){
+        flex-direction: row;
+        align-items: center;
+    }
+
+    & > div{
+        margin-bottom: 20px;
+        &:last-child{margin-bottom: 0;}
+        @include breakpoint(medium){
+            margin-bottom: 0;
+        }
+    }
+
+    &__tab-list{
+        li{
+            margin-right: 15px;
+            display: inline-block;
+            &:last-child{margin-right: 0;}
+        }
+    }
+}
+
+.sort-nav-link{
+    display: block;
+    font-size: 18px;
+    color: $color-white-3;
+    background: transparent;
+    border-radius: 50%;
+    transition: $transition3ms;
+    &:hover,
+    &.active{
+        color: $color-black-1;
+    }
+}
+
+.sort-box__option{padding-left: 10px;}
+
+.select-sort{
+    padding: 5px 30px 5px 15px;
+    border-radius: 3px;
+    appearance: none;
+    option{
+        text-align: right;
+        border: 1px solid $color-gray-1;
+        padding: 5px 15px;
+        margin: 5px 0;
+    }
+
+    &__arrow{
+        position: relative;
+        margin-bottom: 0;
+    
+        &::after{
+            content: "\f0d7";
+            position: absolute;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 600;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+        }
+    }
+}
+
+
+.shop-grid .product__box--default{
+    transform: scale(.3);
+    transition: $transition3ms;
+}
+
+.shop-grid.active .product__box--default{
+    transform: scale(1);
+}
+
+.shop-list > .product__box--list{
+    transform: translateX(100px);
+    transition: all .5s ease;
+}
+
+.shop-list.active > .product__box--list{
+    transform: translateX(0);
+}
+
+.product__box--list .product__img {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}

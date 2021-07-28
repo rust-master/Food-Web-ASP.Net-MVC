@@ -1,0 +1,45 @@
+/*****************************
+29 - Page - Login
+*****************************/
+.login-register-tab-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    h4{
+        font-size: 25px;
+        font-weight: 500;
+        margin: 0 20px;
+        text-transform: capitalize;
+        transition: all .3s ease 0s;
+        color: $color-black-1;
+    }
+    .active h4 {
+        color: $color-primary;
+    }
+    a{
+        position: relative;
+        text-decoration: none !important;
+        &::before{
+            background-color: $color-black-2;
+            bottom: 5px;
+            content: "";
+            height: 18px;
+            margin: 0 auto;
+            position: absolute;
+            right: -2px;
+            transition: all .4s ease 0s;
+            width: 1px;
+        }
+
+        &:last-child::before{
+            display: none;
+        }
+    }
+}
+
+//Login Page Table:: Style
+.login-form-container {
+    padding: 15px;
+    text-align: left;
+}

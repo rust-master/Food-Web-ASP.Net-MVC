@@ -1,0 +1,86 @@
+﻿@model FoodWeb.Models.Products
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["cart"] != null)
+{
+<main id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-content">
+                    <h5 class="section-content__title">Your cart items</h5>
+                </div>
+                <!-- Start Cart Table -->
+                <div class="table-content table-responsive cart-table-content m-t-30">
+                    <table>
+                        <thead class="gray-bg">
+                            <tr>
+                                <th>Image</th>
+                                <th>Product Name</th>
+                                <th>Until Price</th>
+                                <th>Qty</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in TempData["cart"] as List<FoodWeb.Models.Cart>)
+                            {
+                                <tr>
+                                <td class="product-thumbnail">
+                                    <a href="#"><img class="img-fluid" src="~/@item.productPic" alt=""></a>
+                                </td>
+                                <td class="product-name"><a href="#">@item.productName</a></td>
+                                <td class="product-price-cart"><span class="amount">$@item.price</span></td>
+                                <td class="product-quantities">
+                                    <div class="quantity d-inline-block">
+                                        @item.qty
+                                    </div>
+                                </td>
+                                <td class="product-subtotal">@item.bill</td>
+                                <td class="product-remove">
+                                    <a href="#"><i class="fa fa-pencil-alt"></i></a>
+                                    <a href="@Url.Action("Remove", new {id =@item.productId })"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr> 
+                                        }
+                        </tbody>
+                    </table>
+                    <br>
+                    <h3 style="float:right;margin-right:180px;">Total: @TempData["total"] </h3>
+                </div>  <!-- End Cart Table -->
+                <!-- Start Cart Table Button -->
+                <div class="cart-table-button m-t-10">
+                    <div class="cart-table-button--left">
+                        <a href="/Products/Index" class="btn btn--box btn--large btn--radius btn--green btn--green-hover-black btn--uppercase font--bold m-t-20">CONTINUE SHOPPING</a>
+                    </div>
+                    <div class="cart-table-button--right">
+                        @if (TempData["cart"] != null)
+                        {
+                            using (Html.BeginForm())
+                            {
+                            <a href="#" class="btn btn--box btn--large btn--radius btn--black btn--black-hover-green btn--uppercase font--bold m-t-20">Clear Shopping Cart</a>
+                            <input type="submit" class="btn btn--box btn--large btn--radius btn--green btn--green-hover-black btn--uppercase font--bold m-t-20 m-r-20" value="PLACE ORDER">
+                            }
+                        }
+
+                    </div>
+                </div>  <!-- End Cart Table Button -->
+            </div>
+        </div>
+    </div>
+</main>
+}
+else
+{
+<main id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+        <h1>Cart is Empty</h1>    
+        </div>
+    </div>
+</main>
+}

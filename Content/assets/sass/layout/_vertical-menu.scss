@@ -1,0 +1,107 @@
+/*****************************
+35 - Layout - Vertical Menu
+*****************************/
+
+.header-menu-vertical{
+
+    & .menu-title {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin: 0;
+        background: $color-primary;
+        padding: 15px 20px;
+        display: block;
+    }
+
+    & .menu-content {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #eaeaea;
+        top: 100%;
+        left: 0;
+        display: none;
+        z-index: 999;
+    
+        li{    
+            display: block;
+            position: relative;
+            &:hover .sub-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+            a{
+                position: relative;
+                display: block;
+                overflow: hidden;
+                line-height: 24px;
+                text-transform: capitalize;
+                word-wrap: break-word;
+                background: #fff;
+                color: #47494a;
+                padding: 7px 20px;
+                font-size: 14px;
+                font-weight: 400;
+                transition: all 0.3s linear;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                &:hover{
+                    color: $color-primary;
+                }
+            }
+
+            &.expand a i{
+                padding-right: 15px;
+                font-weight: 700;
+            }
+        }
+
+       & li .sub-menu {
+            position: absolute;
+            z-index: 9;
+            text-align: left;
+            top: 0;
+            left: 100%;
+            background: #fff;
+            padding: 15px 10px 15px 10px;
+            display: inline-block;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s linear;
+            border: 1px solid #eaeaea;
+            width: 705px;
+            @include breakpoint(xlarge){
+                width: 890px;
+            }
+
+            & > li {
+                width: 33.33%;
+                float: left;
+            }
+
+            & li a{margin: 5px 0px 5px 0px;}
+
+
+            &.sub-menu-2 {
+                padding: 0;
+                width: 240px;
+                border: 1px solid #eaeaea;
+                background: #fff;
+
+                li {
+                    width: 100%;
+                    padding: 0;
+                    line-height: 20px;
+                    border-bottom: 1px solid #eaeaea;
+                    position: relative;
+                    display: block;
+                }
+            }
+        }
+    }
+} 

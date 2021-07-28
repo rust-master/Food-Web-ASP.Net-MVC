@@ -1,0 +1,276 @@
+/*****************************
+01 - Base - Default
+*****************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    word-wrap: break-word;
+    outline: none;
+
+    &,
+    &::after,
+    &::before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+
+body {
+
+    font : {
+        family: $font-primary;
+        size: 16px;
+        weight: 400;
+    }
+
+    color: $color-secondary;
+}
+
+a,
+button {
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    background: none;
+
+}
+
+a,
+button,
+img,
+input,
+span {
+    transition: all .3s ease 0s;
+    outline: none;
+    border: none;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+a:focus {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+dl, ol, ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.img-responsive{
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+.border-around{
+    @include border-around;
+}
+
+.border-line--small {
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    left: 0;
+    top: 50%;
+}
+
+.list-space{
+   &--small > li{
+        margin-bottom: 10px;
+        &:last-child{margin-bottom: 0;}
+    }
+
+    &--medium > li{
+        margin-bottom: 20px;
+        &:last-child{margin-bottom: 0;}
+    }
+
+    &--large > li{
+        margin-bottom: 30px;
+        &:last-child{margin-bottom: 0;}
+    }
+}
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.position-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.float-margin-auto{
+    &--15{
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+.float-grid-2 {
+    width: 50%;
+    
+}
+.float-grid-3 {
+    width: 100%;
+
+    @include breakpoint(small){
+        width: 50%;
+    }
+    @include breakpoint(medium){
+        width: 50%;
+    }
+    @include breakpoint(large){
+        width: 33.3333%;
+    }
+    
+}
+.float-grid-4 {
+    width: 100%;
+
+    @include breakpoint(small){
+        width: 50%;
+    }
+    @include breakpoint(medium){
+        width: 33.333%;
+    }
+    @include breakpoint(large){
+        width: 25%;
+    }
+    
+}
+.float-grid-5 {
+    width: 100%;
+    @include breakpoint(xsmall){
+        width: 50%;
+    }
+    @include breakpoint(small){
+        width: 50%;
+    }
+    @include breakpoint(medium){
+        width: 33.333%;
+    }
+    @include breakpoint(large){
+        width: 25%;
+    }
+    @include breakpoint(xlarge){
+        width: 20%;
+    }
+    
+}
+
+.float-20-per{
+    width: 20%;
+}
+
+.float-80-per{
+    width: 80%;
+}
+
+
+.text-overflow-ellipsis{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.m-b-60-md{
+    margin-bottom: 60px;
+    @include breakpoint(large){
+        margin-bottom: 0;
+    }
+    .banner__box--single{
+        text-align: center;
+    }
+}
+.m-t-60-md{
+    margin-top: 60px;
+    @include breakpoint(large){
+        margin-top: 0;
+    }
+
+    .banner__box--single{
+        text-align: center;
+    }
+}
+
+.gray-bg.p-tb-100{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @include breakpoint(medium) {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    @include breakpoint(large) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+.gray-bg.m-t-100{
+    margin-top: 50px;
+    @include breakpoint(medium) {
+        margin-top: 70px;
+    }
+    @include breakpoint(large) {
+        margin-top: 90px;
+    }
+}
+
+.absolute-center{
+    @include absolute-center;
+}
+.absolute-center-vertical{
+    @include absolute-center-vertical;
+}
+.absolute-center-horizontal{
+    @include absolute-center-horizontal;
+}
+
+.color-invert{filter:invert(100%);}
+
+.tr-vertical-middle{vertical-align: middle;}

@@ -1,0 +1,29 @@
+/*****************************
+37 - Layout - Custom Layout
+*****************************/
+
+.container{
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @include breakpoint(small){
+        max-width: 540px;
+    }
+    @include breakpoint(medium){
+        max-width: 100%;
+    }
+    @include breakpoint(large){
+        max-width: 100%;
+    }
+    @include breakpoint(xlarge){
+        max-width: 1200px;
+    }
+}
+
+.container-fluid{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}

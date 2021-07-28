@@ -1,0 +1,187 @@
+/*****************************
+36 - Layout - Footer
+*****************************/
+
+.footer{
+    
+    background-color: $color-white;
+    font-size: 14px;
+
+    &.m-t-100{
+        margin-top: 60px;
+        @include breakpoint(medium){margin-top: 80px;}
+        @include breakpoint(large){margin-top: 100px;}
+    }
+
+    &__top{
+       border-top: 1px solid $color-white-3;
+       padding-top: 60px;
+       padding-bottom: 60px;
+
+       @include breakpoint(medium){
+            padding-top: 80px;
+            padding-bottom: 80px;
+       }
+       @include breakpoint(large){
+            padding-top: 80px;
+            padding-bottom: 80px;
+       }
+    }
+
+    &__top [class ^= "col"]{
+            margin-bottom: 40px;
+            &:last-child{margin-bottom: 0;}
+            @include breakpoint(small){
+                margin-bottom: 40px;
+                &:nth-child(3),
+                &:nth-child(4){margin-bottom: 0;}
+            }
+            @include breakpoint(large){margin-bottom: 0;}
+    }
+        // Footer Logo
+        &__logo{
+            margin-bottom: 30px;
+            text-align: left;
+            &-img{
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        // Footer Address
+        &__address{
+            text-align: left;
+            &-item{
+                margin-bottom: 16px;
+
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+                i{padding-right: 10px;}
+            }
+        }
+
+        // Footer Social Link
+        .footer__social-nav{
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 15px;
+        }
+
+        .footer__social-list{
+            margin-right: 15px;
+            &:last-child{margin-right: 0;}
+        }
+
+        .footer__social-link{
+            display: block;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            transition: $transition3ms;
+            color: $color-gray;
+            background: $color-white-1;
+            &:hover{
+                color: $color-white;
+                background: $color-green;
+            }
+        }
+
+        // Footer Navigation Manu
+        &__menu{margin-top: 0px;}
+
+        &__nav{
+            &-title{
+                font-size: 14px;
+                margin-bottom: 20px;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+        }
+
+        &__list{
+            margin-bottom: 12px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+
+        &__link{
+            color: $color-gray;
+            transition: all .3s ease;
+            font-size: 14px;
+            text-decoration: none !important;
+            display: block;
+            &:hover{
+                color: $color-green;
+                padding-left: 10px;
+            }
+        }
+
+        // Footer Form
+        &__form{
+            &-box{
+                font-size: 16px;
+                margin-top: 50px;
+                position: relative;
+
+                input {
+                    width: 100%;
+                    padding: 12px 120px 12px 10px;;
+                    outline: none;
+                    border: none;
+                    background: $color-black-2;
+                    border-right: none;
+                    color: $color-white-3;
+                }
+
+                button{
+                    position: absolute;
+                    padding: 16px 10px;
+                    right: 0;
+                }
+            }
+        }
+
+
+    &__bottom{
+        padding: 40px 0;
+        border-top: 1px solid $color-white-3;
+       
+    }
+
+    // Footer Copyright Text
+    &__copyright-text{
+        text-align: center;
+        margin-bottom: 20px;
+        @include breakpoint(large){
+            text-align: left;
+            margin-bottom: 0;
+        }
+       p{ margin: 0;}
+       a{
+           color: $color-green;
+           &:hover{text-decoration: underline;}
+        }
+    }
+
+    // Footer Payment Image
+    &__payment{
+        overflow: hidden;
+        text-align: center;
+        @include breakpoint(large){
+            text-align: right;
+        }
+
+        &-link{display: block;}
+
+        &-img{
+            max-width: 100%;
+
+        }
+    }
+
+
+}

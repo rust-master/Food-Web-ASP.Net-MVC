@@ -1,0 +1,111 @@
+﻿@model IEnumerable<FoodWeb.Models.Products>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- :::::: Start Main Container Wrapper :::::: -->
+<main id="main-container" class="main-container">
+    <!-- ::::::  Start Hero Section  ::::::  -->
+    <div class="hero slider-dot-fix slider-dot slider-dot-fix slider-dot--center slider-dot-size--medium slider-dot-circle  slider-dot-style--fill slider-dot-style--fill-white-active-green dot-gap__X--10">
+        <!-- Start Single Hero Slide -->
+        <div class="hero-slider">
+            <img src="~/Content/assets/img/hero/sliderimage1.jpg" />
+            <div class="hero__content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="hero__content--inner">
+                                <h6 class="title__hero title__hero--tiny text-uppercase">100% Healthy & Affordable</h6>
+                                <h1 class="title__hero title__hero--xlarge font--regular text-uppercase">Organic <br>  Vegetables</h1>
+                                <h4 class="title__hero title__hero--small font--regular">Small Changes Big Difference</h4>
+                                <a href="product-single-default.html" class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Single Hero Slide -->
+        <!-- Start Single Hero Slide -->
+        <div class="hero-slider">
+            <img src="~/Content/assets/img/hero/sliderimage1.jpg" />
+            <div class="hero__content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="hero__content--inner">
+                                <h6 class="title__hero title__hero--tiny text-uppercase">100% Healthy & Affordable</h6>
+                                <h1 class="title__hero title__hero--xlarge font--regular text-uppercase">Organic <br>   fresh fruits</h1>
+                                <h4 class="title__hero title__hero--small font--regular">Small Changes Big Difference</h4>
+                                <a href="product-single-default.html" class="btn btn--large btn--radius btn--black btn--black-hover-green font--bold text-uppercase">Shop now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Single Hero Slide -->
+    </div> <!-- ::::::  End Hero Section  ::::::  -->
+
+
+    <div class="product m-t-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Start Section Title -->
+                    <div class="section-content section-content--border m-b-35">
+                        <h5 class="section-content__title">Top categories</h5>
+                        <ul class="tablist tablist--style-blue tablist--style-gap-20 nav">
+                            <li><a class="nav-link active" data-toggle="tab" href="#fruits">Fruites</a></li>
+                        </ul>
+                    </div>  <!-- End Section Title -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content tab-animate-zoom">
+                        <!-- Start Single Tab Item -->
+                        <div class="tab-pane show active" id="fruits">
+                            <div class="default-slider default-slider--hover-bg-red product-default-slider">
+                                <div class="product-default-slider-4grid-2rows gap__col--30 gap__row--40">
+                                    @foreach (var item in Model)
+                                    {
+                                        <!-- Start Single Default Product -->
+                                        <div class="product__box product__default--single text-center">
+                                            <!-- Start Product Image -->
+                                            <div class="product__img-box  pos-relative">
+                                                <a href="#" class="product__img--link">
+                                                    <img class="product__img img-fluid" src="~/@Html.DisplayFor(modelItem => item.ProductPicture)" alt="">
+                                                </a>
+                                                <!-- Start Product Action Link-->
+                                                <ul class="product__action--link pos-absolute">
+                                                    <li><a href="@Url.Action("addToCart","Products", new { id = item.id })" data-toggle="modal"><i class="icon-shopping-cart"></i></a></li>
+
+                                                    <li><a href="#"><i class="icon-heart"></i></a></li>
+
+                                                </ul> <!-- End Product Action Link -->
+                                            </div> <!-- End Product Image -->
+                                            <!-- Start Product Content -->
+                                            <div class="product__content m-t-20">
+                                                <a href="product-single-default.html" class="product__link">@Html.DisplayFor(modelItem => item.ProductName)</a>
+                                                <div class="product__price m-t-5">
+                                                    <span class="product__price">$@Html.DisplayFor(modelItem => item.ProductPrice)</span>
+                                                </div>
+                                            </div> <!-- End Product Content -->
+                                        </div> <!-- End Single Default Product -->
+
+                                    }
+
+                                </div>
+                            </div>
+                        </div>  <!-- End Single Tab Item -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <!-- ::::::  End  Product Style - Default Section  ::::::  -->
+
+
+
+</main>  <!-- :::::: End MainContainer Wrapper :::::: -->

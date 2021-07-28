@@ -1,0 +1,119 @@
+/*****************************
+19 - Component - Tabstyle
+*****************************/
+
+// Tablist Customize
+
+.tablist{
+	li{position: relative;}
+
+	//Tablist Color
+	&--style-black{
+		.nav-link{
+			color: $color-gray-2;
+			padding: 0 0 26px 0;
+			margin-bottom: 20px;
+			@include breakpoint(medium){margin-bottom: 0px;}
+			position: relative;
+			&::after{
+				position: absolute;
+				content: "";
+				bottom: 10px;
+				left: 50%;
+				right: 50%;
+				width: 0%;
+				height: 2px;
+				background: $color-green;
+				transition: $transition3ms;
+				@include breakpoint(medium){bottom: 0px;}
+			}
+			&.active, &:hover{
+				color: $color-black;
+				&::after{
+					left: 0%;
+					right: 0%;
+					width: 100%;
+				}
+			}
+
+		}
+	}
+
+	&--style-blue{
+		.nav-link{
+			color: $color-gray-2;
+			&.active, &:hover{color: $color-primary;}
+		}
+	}
+
+	// Tablist Style
+	&--style-title{
+		li > .nav-link{
+			font-size: 20px;
+		    line-height: 22px;
+		    font-weight: 500;
+			text-align: center;
+		}
+	}
+
+	// Tablist Seperator
+	&--style-seperator{
+		li::after {
+			position: absolute;
+			content: "";
+			width: 1px;
+			height: 15px;
+			background: $color-gray-1;
+			top: 50%;
+			transform: translateY(-50%);
+			left: calc(100% - 35px);
+		}
+
+		li:last-child::after{
+			display: none;
+		}
+	}
+	
+	// Tablist Link Gap
+	&--style-gap{
+		li:last-child > .nav-link{
+    		margin-right: 0
+		}
+
+		&-20{
+			li > .nav-link{margin-right: 20px;}
+		}
+		&-30{
+			li > .nav-link{margin-right: 30px;}
+		}
+		&-70{
+			li > .nav-link{margin-right: 70px;}
+		}
+		
+	}
+}
+
+.tab-content .tab-pane {
+    display: block;
+    height: 0;
+    max-width: 100%;
+    visibility: hidden;
+    overflow: hidden;
+	opacity: 0;
+}
+
+.tab-content .tab-pane.active {
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+	overflow: visible;
+}
+
+.tab-animate-zoom .tab-pane .product__box{
+    transform: translateY(-100px) scale(.5);
+    transition: all .5s ease;
+}
+.tab-animate-zoom .tab-pane.active .product__box{
+    transform: translateY(0) scale(1);
+}
+    

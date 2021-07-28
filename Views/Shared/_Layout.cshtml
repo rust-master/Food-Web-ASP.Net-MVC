@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ::::::::::::::Favicon icon::::::::::::::-->
+    <link rel="shortcut icon" href="~/Content/assets/img/favicon.png" type="image/png">
+
+    <!-- ::::::::::::::All CSS Files here :::::::::::::: -->
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="~/Content/assets/css/vendor/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/vendor/fontawesome.css">
+    <link rel="stylesheet" href="~/Content/assets/css/vendor/plaza-icon.css">
+    <link rel="stylesheet" href="~/Content/assets/css/vendor/bootstrap.min.css">
+
+    <!-- Plugin CSS Files -->
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/slick.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/material-scrolltop.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/price_range_style.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/in-number.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/venobox.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/jquery.lineProgressbar.css">
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <!-- <link rel="stylesheet" href="~/Content/assets/css/vendor/vendor.min.css"/>
+    <link rel="stylesheet" href="~/Content/assets/css/plugin/plugins.min.css"/>
+    <link rel="stylesheet" href="~/Content/assets/css/main.min.css"> -->
+    <!-- Main Style CSS File -->
+    <link rel="stylesheet" href="~/Content/assets/css/main.css">
+
+</head>
+<body>
+    <!-- ::::::  Start Header Section  ::::::  -->
+    <header>
+        <!--  Start Large Header Section   -->
+        <div class="header d-none d-lg-block">
+            <!-- Start Header Top area -->
+            <div class="header__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="header__top-content d-flex justify-content-between align-items-center">
+                                <div class="header__top-content--left">
+                                    <span>Free Delivery: Take advantage of our time to save event</span>
+                                </div>
+                                <ul class="header__top-content--right user-set-role d-flex">
+                                    
+                                    @{
+                                        var userInCookie = Request.Cookies["UserInfo"];
+                                    }
+                                    @if (userInCookie != null)
+                                    {
+                                        string User_id = string.Empty;
+                                        string name = string.Empty;
+                                        string email = string.Empty;
+                                        name = userInCookie["FullName"].ToString();
+                                        email = userInCookie["Email"].ToString();
+                                        <li>@User_id</li>
+                                        <li>Name: @name</li>
+                                        <li>Email: @email</li>
+                                        <li><a href="@Url.Action("Logout","User")" class="btn">Logout</a></li>
+                                    }
+                                </ul>
+                                
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Start Header Top area -->
+            <!-- Start Header Center area -->
+            <div class="header__center sticky-header p-tb-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-between align-items-center">
+                            <!-- Start Logo -->
+                            <div class="header__logo">
+                                <a href="/HomePageTest/Index" class="header__logo-link img-responsive">
+                                    <img class="header__logo-img img-fluid" src="~/Content/assets/img/logo/logo.png" alt="">
+                                </a>
+                            </div> <!-- End Logo -->
+                            <!-- Start Header Menu -->
+                            <div class="header-menu">
+                                <nav>
+                                    <ul class="header__nav">
+                                        <!--Start Single Nav link-->
+                                        <li class="header__nav-item pos-relative">
+                                            <a href="/HomePageTest/Index" class="header__nav-link">Home</a>
+                                        </li> <!-- End Single Nav link-->
+                                        <!--Start Single Nav link-->
+                                        <li class="header__nav-item pos-relative header__nav-link">
+                                            <a href="/Products/Index" class="header__nav-link">Products</a>
+                                        </li> <!-- Start Single Nav link-->
+                                        <!--Start Single Nav link-->
+                                        <li class="header__nav-item pos-relative">
+                                            <a href="/Products/Checkout" class="header__nav-link">Checkout</a>
+
+                                        </li> <!-- Start Single Nav link-->
+                                        <!--Start Single Nav link-->
+                                        <li class="header__nav-item pos-relative">
+                                            <a href="/Information/Blog" class="header__nav-link">Blog</a>
+
+                                        </li> <!-- End Single Nav link-->
+                                        <!--Start Single Nav link-->
+                                        <li class="header__nav-item pos-relative">
+                                            <a href="/Information/AboutUs" class="header__nav-link">About Us</a>
+
+                                        </li> <!-- End Single Nav link-->
+                                        <!--Start Single Nav link-->
+                                        <li class="header__nav-item pos-relative">
+                                            <a href="/Information/ContactUs" class="header__nav-link">Contact Us</a>
+
+                                        </li> <!-- End Single Nav link-->
+                                    </ul>
+                                </nav>
+                            </div> <!-- End Header Menu -->
+                            <!-- Start Wishlist-AddCart -->
+                            <ul class="header__user-action-icon">
+                                <!-- Start Header Wishlist Box -->
+                                @{
+                                    var usersInCookie = Request.Cookies["UserInfo"];
+                                }
+                                @if (usersInCookie != null)
+                                {
+                                    string User_id = string.Empty;
+                                    User_id = userInCookie["idUser"].ToString();
+                                    <li>@User_id</li>
+                                }
+                                else
+                                {
+                                    <li class="header__nav-item pos-relative header__nav-link">
+                                        @Html.ActionLink("Login", "Login", "User")
+                                    </li>
+                                }
+                                <!-- Start Header Add Cart Box -->
+                                <li>
+                                    <a href="/Products/Checkout" >
+                                        <i class="icon-shopping-cart"></i>
+                                        <span class="wishlist-item-count pos-absolute"></span>
+                                    </a>
+                                </li> <!-- End Header Add Cart Box -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Header Center area -->
+            <!-- Start Header bottom area -->
+            <div class="header__bottom p-tb-30">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="header-menu-vertical pos-relative">
+                                <h4 class="menu-title link--icon-left"><i class="far fa-align-left"></i>Quick Links</h4>
+                                <ul class="menu-content pos-absolute">
+                                    <li class="menu-item"><a href="#"> Products</a></li>
+                                    <li class="menu-item"><a href="#"> Checkout</a></li>
+                                    <li class="menu-item"><a href="#"> Blog</a></li>
+                                    <li class="menu-item"><a href="#"> Contact Us</a></li>
+                                    <li class="menu-item"><a href="#"> About Us</a></li>
+                                    <li class="menu-item"><a href="#"> Login</a></li>
+                                    <li class="menu-item"><a href="#"> Sign Up</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-6">
+                            <form class="header-search" action="#" method="post">
+                                <div class="header-search__content pos-relative">
+                                    <input type="search" name="header-search" placeholder="Search our store" required>
+                                    <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xl-2 col-lg-3">
+                            <div class="header-phone text-right"><span>Call Us: 334 7860477</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Header bottom area -->
+
+        </div> <!--  End Large Header Section  -->
+        <!--  Start Mobile Header Section   -->
+        <div class="header__mobile mobile-header--1 d-block d-lg-none p-tb-20">
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-12 d-flex align-items-center justify-content-between">
+                        <ul class="header__mobile--leftside d-flex align-items-center justify-content-start">
+                            <li>
+                                <div class="header__mobile-logo">
+                                    <a href="index.html" class="header__mobile-logo-link">
+                                        <img src="~/Content/assets/img/logo/logo.png" alt="" class="header__mobile-logo-img">
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Start User Action -->
+                        <ul class="header__mobile--rightside header__user-action-icon  d-flex align-items-center justify-content-end">
+                            <!-- Start Header Add Cart Box -->
+                            <li>
+                                <a href="#offcanvas-add-cart__box" class="offcanvas-toggle">
+                                    <i class="icon-shopping-cart"></i>
+                                    <span class="wishlist-item-count pos-absolute">3</span>
+                                </a>
+                            </li> <!-- End Header Add Cart Box -->
+                            <li><a href="#offcanvas-mobile-menu" class="offcanvas-toggle"><i class="far fa-bars"></i></a></li>
+
+                        </ul>   <!-- End User Action -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header-menu-vertical pos-relative m-t-30">
+                            <h4 class="menu-title link--icon-left"><i class="far fa-align-left"></i>Quick Links</h4>
+                            <ul class="menu-content pos-absolute">
+                                <li class="menu-item"><a href="#"> Products</a></li>
+                                <li class="menu-item"><a href="#"> View Cart</a></li>
+                                <li class="menu-item"><a href="#"> Blog</a></li>
+                                <li class="menu-item"><a href="#"> Contact Us</a></li>
+                                <li class="menu-item"><a href="#"> About Us</a></li>
+                                <li class="menu-item"><a href="#"> Login</a></li>
+                                <li class="menu-item"><a href="#"> Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!--  Start Mobile Header Section   -->
+        <!--  Start Mobile-offcanvas Menu Section   -->
+        <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
+            <div class="offcanvas__top">
+                <span class="offcanvas__top-text"></span>
+                <button class="offcanvas-close"><i class="fal fa-times"></i></button>
+            </div>
+
+            <div class="offcanvas-inner">
+            
+                <form class="header-search m-tb-15" action="#" method="post">
+                    <div class="header-search__content pos-relative">
+                        <input type="search" name="header-search" placeholder="Search our store" required>
+                        <button class="pos-absolute" type="submit"><i class="icon-search"></i></button>
+                    </div>
+                </form>
+                <!-- Start Mobile User Action -->
+                <ul class="header__user-action-icon m-tb-15 text-center">
+                    <!-- Start Header Wishlist Box -->
+                    <li>
+                        <a href="my-account.html">
+                            <i class="icon-users"></i>
+                        </a>
+                    </li> <!-- End Header Wishlist Box -->
+                    <!-- Start Header Wishlist Box -->
+                    <li>
+                        <a href="wishlist.html">
+                            <i class="icon-heart"></i>
+                            <span class="item-count pos-absolute">3</span>
+                        </a>
+                    </li> <!-- End Header Wishlist Box -->
+                    <!-- Start Header Add Cart Box -->
+                    <li>
+                        <a href="cart.html">
+                            <i class="icon-shopping-cart"></i>
+                            <span class="wishlist-item-count pos-absolute">3</span>
+                        </a>
+                    </li> <!-- End Header Add Cart Box -->
+                </ul>  <!-- End Mobile User Action -->
+                <div class="offcanvas-menu">
+                    <ul>
+                        <li><a href="/HomePageTest/Index"><span>Home</span></a></li>
+                        <li>
+                            <a href="/Products/Index"><span>Products</span></a>
+                        </li>
+                        <li>
+                            <a href="/Information/Blog"><span>Blogs</span></a>
+                        </li>
+                        <li>
+                            <a href="/Information/AboutUs"><span>About Us</span></a>
+                        </li>
+                        <li><a href="/Information/ContactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="offcanvas__social-nav m-t-50">
+                <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-twitter"></i></a></li>
+                <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-youtube"></i></a></li>
+                <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-google-plus-g"></i></a></li>
+                <li class="offcanvas__social-list"><a href="#" class="offcanvas__social-link"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div> <!--  End Mobile-offcanvas Menu Section   -->
+     
+
+        <div class="offcanvas-overlay"></div>
+    </header>  <!-- :::::: End Header Section ::::::  -->
+
+    <div class="container body-content">
+        @RenderBody()
+        <!-- ::::::  Start  Footer ::::::  -->
+        <footer class="footer m-t-100">
+            <div class="container">
+                <!-- Start Footer Top Section -->
+                <div class="footer__top">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="footer__about">
+                                <div class="footer__logo">
+                                    <a href="index.html" class="footer__logo-link">
+                                        <img src="~/Content/assets/img/logo/logo.png" alt="" class="footer__logo-img">
+                                    </a>
+                                </div>
+                                <ul class="footer__address">
+                                    <li class="footer__address-item"><i class="fa fa-home"></i>COMSATS University Islamabad Sahiwal</li>
+                                    <li class="footer__address-item"><i class="fa fa-phone-alt"></i>+92 334 786 0477</li>
+                                    <li class="footer__address-item"><i class="fa fa-envelope"></i>support@foodonline.com</li>
+                                </ul>
+                                <ul class="footer__social-nav">
+                                    <li class="footer__social-list"><a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li class="footer__social-list"><a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a></li>
+                                    <li class="footer__social-list"><a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a></li>
+                                    <li class="footer__social-list"><a href="#" class="footer__social-link"><i class="fab fa-google-plus-g"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                            <!-- Start Footer Nav -->
+                            <div class="footer__menu">
+                                <h4 class="footer__nav-title footer__nav-title--dash footer__nav-title--dash-red">INFORMATION</h4>
+                                <ul class="footer__nav">
+                                    <li class="footer__list"><a href="/Products/Index" class="footer__link">Products</a></li>
+                                    <li class="footer__list"><a href="/LoginAdmin/Admin" class="footer__link">Admin Login</a></li>
+                                </ul>
+                            </div> <!-- End Footer Nav -->
+                        </div>
+                    </div>
+                </div> <!-- End Footer Top Section -->
+                <!-- Start Footer Bottom Section -->
+                <div class="footer__bottom">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6 col-12">
+                            <!-- Start Footer Copyright Text -->
+                            <div class="footer__copyright-text">
+                                <a href="@Url.Action("LoginAdmin","Admin")">Login Admin Side</a>
+                                <p>&copy; @DateTime.Now.Year - Food Order and Delivery. All Rights Reserved</p>
+                            </div> <!-- End Footer Copyright Text -->
+                        </div>
+                    </div>
+                </div> <!-- End Footer Bottom Section -->
+            </div>
+        </footer> <!-- ::::::  End  Footer ::::::  -->
+
+
+
+
+    </div>
+
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="~/Content/assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="~/Content/assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="~/Content/assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugins JS Files -->
+    <script src="~/Content/assets/js/plugin/slick.min.js"></script>
+    <script src="~/Content/assets/js/plugin/jquery.countdown.min.js"></script>
+    <script src="~/Content/assets/js/plugin/material-scrolltop.js"></script>
+    <script src="~/Content/assets/js/plugin/price_range_script.js"></script>
+    <script src="~/Content/assets/js/plugin/in-number.js"></script>
+    <script src="~/Content/assets/js/plugin/jquery.elevateZoom-3.0.8.min.js"></script>
+    <script src="~/Content/assets/js/plugin/venobox.min.js"></script>
+    <script src="~/Content/assets/js/plugin/jquery.waypoints.js"></script>
+    <script src="~/Content/assets/js/plugin/jquery.lineProgressbar.js"></script>
+
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <!-- <script src="~/Content/assets/js/vendor/vendor.min.js"></script>
+    <script src="~/Content/assets/js/plugin/plugins.min.js"></script> -->
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="~/Content/assets/js/main.js"></script>
+</body>
+
+</html>

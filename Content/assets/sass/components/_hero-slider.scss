@@ -1,0 +1,65 @@
+/*****************************
+06 - Component - Hero Slider
+*****************************/
+.hero {
+	position: relative;
+	overflow: hidden;
+
+
+	// Hero Image Content
+	.hero-slider{
+		position: relative;
+
+		// Hero Image Height
+		img{
+			width : 100%;
+			object-fit: cover;
+			height: 300px;
+			@include breakpoint(medium){height: 390px;}
+			@include breakpoint(large){height: 530px;}
+			@include breakpoint(xlarge){height: 675px;}
+			@include breakpoint(xxlarge){height: 960px;}
+		}
+	}
+
+	
+	&__content {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		transform: translateY(-50%);
+		padding-left: 0;
+		padding-right: 0;
+		@include breakpoint(large){
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		.title__hero--tiny{
+			margin-bottom: 25px;
+		}
+
+		.title__hero--xlarge{
+			margin-bottom: 10px;
+		}
+
+		.title__hero--small{
+			margin-bottom: 30px;
+		}
+	}
+
+	//Hero Image - Content Animation	
+
+	.slick-active{
+		& .hero__content--inner{
+			h6{animation: animate-left .7s linear .1s backwards;}
+			h1{animation: animate-left .8s linear .15s backwards;}
+			h4{animation: animate-left .9s linear .2s backwards;}
+			a{animation: animate-bottom .8s linear .25s backwards}
+		}	
+	}
+	
+}
+
+

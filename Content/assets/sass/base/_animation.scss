@@ -1,0 +1,143 @@
+/*****************************
+04 - Base - Animation
+*****************************/
+
+@keyframes animate-top{
+
+	0%{
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
+}
+@keyframes animate-bottom{
+
+	0%{
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
+}
+
+
+@keyframes animate-left{
+
+	0%{
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+
+}
+@keyframes animate-right{
+
+	0%{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+
+}
+
+@keyframes animate-zoom{
+
+	0%{
+		opacity: 0;
+		transform: scale(.3);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+
+}
+@keyframes animate-zoom-blink{
+
+	0%{
+		transform: scale(1.1);
+	}
+	25%{
+		transform: scale(.9);
+	}
+    
+    50%{
+		transform: scale(1.1);
+	}
+    
+    75%{
+		transform: scale(.9);
+	}
+    
+    
+	100%{
+		transform: scale(1.1);
+	}
+
+}
+
+@keyframes slideInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+
+.glossy-flash-animate{
+	&::before{
+		background: rgba($color-white,0.3);
+		bottom: 0;
+		content: "";
+		left: 50%;
+		position: absolute;
+		right: 50%;
+		top: 0;
+		opacity: 1;
+	}
+
+	&::after{
+		background: rgba($color-white, 0.6);
+		bottom: 50%;
+		content: "";
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		opacity: 1;
+	}
+
+	&:hover::before{
+		left: 0;
+		right: 0;
+		opacity: 0;;
+		transition: all 900ms linear;
+	}
+
+	&:hover::after{
+		top: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: all 900ms linear;
+	}
+}

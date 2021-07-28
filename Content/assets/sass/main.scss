@@ -1,0 +1,116 @@
+
+/******************************
+Template Name: Gsore
+Template Description: Gsore - Grocery and Organic Food Shop HTML Template
+Template Author: Jaber Hossain Shovon
+Template URL: https://hasthemes.com/
+
+=====================
+    Table Of Index:
+=====================
+
+01 - Base - Default
+02 - Base - Color
+03 - Base - Typhography
+04 - Base - Animation
+
+05 - Component - Button
+06 - Component - Hero Slider
+07 - Component - CMS
+08 - Component - Banner
+09 - Component - Product
+10 - Component - Testimonial
+11 - Component - Newsletter
+12 - Component - Company Logo
+13 - Component - Modal
+14 - Component - Breadcrumb
+15 - Component - Shop Sorting
+16 - Component - Pagination
+17 - Component - Sidebar Widget
+18 - Component - Gallery
+19 - Component - Tabstyle
+20 - Component - Comment
+21 - Component - Form
+
+22 - Page - Shop
+23 - Page - Product Single
+24 - Page - Blog
+25 - Page - Cart
+26 - Page - Checkout
+27 - Page - 404 
+28 - Page - My Account
+29 - Page - Login
+30 - Page - Contact
+31 - Page - FAQ
+32 - Page - About
+
+33 - Layout - Header
+34 - Layout - Mobile Menu
+35 - Layout - Vertical Menu
+36 - Layout - Footer
+37 - Layout - Custom Layout
+38 - Layout - Table
+39 - Layout - Offcanvas
+40 - Layout - Addcart Offcanvas
+41 - Layout - Slider Customize
+42 - Layout - Utilities
+******************************/
+
+
+
+// Import:: SCSS File 
+//:::::::::::::::::::Default CSS:::::::::::::::::::::
+@import 'base/variable';
+@import 'base/mixin';
+@import 'base/base';
+@import 'base/color';
+@import 'base/typography';
+//:::::::::::::::::::Animation CSS:::::::::::::::::::::
+@import 'base/animation';
+
+
+//:::::::::::::::::::Component CSS:::::::::::::::::::::
+@import 'components/button';
+@import 'components/hero-slider';
+@import 'components/cms';
+@import 'components/banner';
+@import 'components/product';
+@import 'components/testimonial';
+@import 'components/newsletter';
+@import 'components/company-logo';
+@import 'components/modal';
+@import 'components/breadcrumb';
+@import 'components/shop-sort';
+@import 'components/page-pagination';
+@import 'components/sidebar';
+@import 'components/gallery';
+@import 'components/tab-style';
+@import 'components/comment';
+@import 'components/form-box';
+
+
+//:::::::::::::::::::Page CSS:::::::::::::::::::::
+@import 'page/shop';
+@import 'page/product-single';
+@import 'page/blog';
+@import 'page/cart';
+@import 'page/checkout';
+@import 'page/404';
+@import 'page/my-account';
+@import 'page/log-in';
+@import 'page/contact';
+@import 'page/faq';
+@import 'page/about';
+
+
+//:::::::::::::::::::Layout CSS:::::::::::::::::::::
+@import 'layout/header';
+@import 'layout/mobile-menu';
+@import 'layout/vertical-menu';
+@import 'layout/footer';
+@import 'layout/custom-layout';
+@import 'layout/table';
+@import 'layout/offcanvas';
+@import 'layout/offcanvas-add-cart';
+@import 'layout/slider-customize';
+@import 'base/utilities';

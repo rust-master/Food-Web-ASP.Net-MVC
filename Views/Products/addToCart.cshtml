@@ -1,0 +1,74 @@
+﻿@model FoodWeb.Models.Products
+
+@{
+    ViewBag.Title = "addToCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main-container" class="main-container">
+    @using (Html.BeginForm("addToCart",
+                        "Products",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+    {
+
+        <!-- Start Product Details Gallery -->
+        <div class="product-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="product-gallery-box product-gallery-box--default m-b-60">
+                            <div class="product-image--large product-image--large-horizontal">
+                                <img class="img-fluid" id="img-zoom" src="~/@Html.DisplayFor(model => model.ProductPicture)" data-zoom-image="~/@Html.DisplayFor(model => model.ProductPicture)" alt="">
+                            </div>
+                            <div id="gallery-zoom" class="product-image--thumb product-image--thumb-horizontal pos-relative">
+                                <a class="zoom-active" data-image="~/@Html.DisplayFor(model => model.ProductPicture)" data-zoom-image="~/@Html.DisplayFor(model => model.ProductPicture)">
+                                    <img class="img-fluid" src="~/@Html.DisplayFor(model => model.ProductPicture)" alt="">
+                                </a>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="product-details-box m-b-60">
+                            <h4 class="font--regular m-b-20">@Html.DisplayFor(model => model.ProductName)</h4>
+
+                            <div class="product__price m-t-5">
+                                <span class="product__price product__price--large">$@Html.DisplayFor(model => model.ProductPrice)</span>
+                            </div>
+                            <div class="product-var p-tb-30">
+                                <div class="product-quantity product-var__item d-flex align-items-center">
+                                    <span class="product-var__text">Quantity: </span>
+                                    <form class="quantity-scale m-l-20">
+                                        <div class="value-button" id="decrease" onclick="decreaseValue()">-</div>
+                                        <input type="number" id="number"  name="number" value="1" />
+                                        <div class="value-button" id="increase" onclick="increaseValue()">+</div>
+                                    </form>
+                                </div>
+                                <div class="product-var__item">
+                                    
+                                    <input  class="btn btn--long btn--radius-tiny btn--green btn--green-hover-black btn--uppercase btn--weight m-r-20" type="submit"  value="Add to cart" />
+                                    <a href="wishlist.html" class="btn btn--round btn--round-size-small btn--green btn--green-hover-black"><i class="fas fa-heart"></i></a>
+                                </div>
+     
+                                <div class="product-var__item">
+                                    <span class="product-var__text">Guaranteed safe checkout </span>
+
+                                </div>
+                                <div class="product-var__item d-flex align-items-center">
+                                    <span class="product-var__text">Share: </span>
+                                    <ul class="product-social m-l-20">
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Product Details Gallery -->
+
+    }
+</main>

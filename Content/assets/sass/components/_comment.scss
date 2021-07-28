@@ -1,0 +1,73 @@
+/*****************************
+20 - Component - Comment
+*****************************/
+
+.comment{
+	padding: 0;
+	@include breakpoint(medium){
+		padding: 0px 20px 20px 20px;	
+	}
+	&__list{
+		border-bottom: 1px solid $color-white-3;
+		padding-top: 20px;
+		padding-bottom: 15px;
+		&:last-child{
+			border-bottom: none;
+		}
+
+		&:first-child{
+			padding-top: 0;
+		}
+	}
+	&__list >  &__reply{
+		margin-left: 0;
+		@include breakpoint(medium){
+			margin-left: 100px;
+		}
+
+	}
+	
+	&__reply li{
+		border-top: 1px solid $color-white-3;
+		padding-top: 20px;
+		margin-top: 15px;
+	}
+
+	&__wrapper{
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		@include breakpoint(small){
+			flex-direction: row;
+		}
+		
+	}
+	&__img{
+		margin-right: 30px;
+		margin-bottom: 20px;
+		border-radius: 5px;
+		img{
+			width: 78px;
+			height: 78px;
+			border-radius: 5px;
+		}
+	}
+
+	&__name{
+		font-weight: 600;
+		margin-right: 10px;
+	}
+	&__content{
+
+		&-top{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 20px;
+			flex-wrap: wrap;
+		}
+
+		
+	}
+
+}

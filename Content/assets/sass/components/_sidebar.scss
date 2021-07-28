@@ -1,0 +1,134 @@
+/*****************************
+17 - Component - Sidebar Widget
+*****************************/
+
+.sidebar{
+    margin-top: 60px;
+    @include breakpoint(medium){
+        margin-top: 80px;
+    }
+    @include breakpoint(large){
+        margin-top: 0px;
+    }
+
+    &__widget {
+        margin-bottom: 40px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__box{
+        position: relative;
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: $color-white-3;
+            bottom: -20px;
+            left: 0;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
+
+    &__menu{
+        & > li{
+            margin-bottom: 10px;
+            &:last-child{margin-bottom: 0;}
+
+            a:hover{color: $color-primary;}
+        }
+    }
+
+    &__menu-collapse-list:last-child  .accordion__title{margin-bottom: 0;}
+
+    &__size,
+    &__tag{
+        li{
+            display: inline-block;
+            margin-right: 2.5px;
+            &:last-child{margin-right: 0;}
+        }
+    }
+
+    &__menu-filter {
+        &-list{
+            margin-bottom: 10px;
+            &:last-child{margin-bottom: 0;}
+        }
+    }
+
+    &__banner img{
+        height: auto !important;
+    }
+
+}
+
+.accordion{
+    &__title{
+        display: flex;
+        font-weight: 700;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+    }
+
+    &__category-list{
+        border-top: 1px solid $color-white-3;
+        li{
+            padding-left: 5px;
+            padding: 5px;
+            display: block;
+        }
+
+    }
+
+    a{
+        text-decoration: none !important;
+        color: $color-black-1;
+        &:hover{color: $color-primary;}
+    }
+}
+
+
+// Sidebar Post - Blog
+.sidebar__post-blog{
+   .sidebar__post-img{
+        max-width: 30%;
+        overflow: hidden;
+     }
+
+    .sidebar__post-content{
+        margin-left: 10px;
+        a{
+            font-size: 14px;
+            word-wrap: break-word;
+            font-weight: 500;
+        }
+        span{font-size: 13px}
+    }
+}
+
+.sidebar__post-product{
+    .sidebar__product-img{
+        max-width: 30%;
+        overflow: hidden;
+    }
+
+    .product__content{
+        margin-left: 10px;
+        a{
+            font-size: 14px;
+            word-wrap: break-word;
+            font-weight: 500;
+        }
+    }
+}

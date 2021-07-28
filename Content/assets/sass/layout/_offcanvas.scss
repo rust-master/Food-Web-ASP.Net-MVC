@@ -1,0 +1,90 @@
+/*****************************
+39 - Layout - Offacnvas
+*****************************/
+
+/* Body Style When OffCanvas Open */
+
+
+.offcanvas-close{
+    color: $color-gray;
+    background: transparent;
+    font-size: 24px;
+    &:hover{color: $color-red;}
+}
+
+/* OffCanvas Overlay */
+.offcanvas-overlay {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba($color-black, 0.5);
+}
+
+$transition: all 0.5s ease 0s;
+// Heading Color
+$heading-color: #333333;
+
+/* OffCanvas */
+.offcanvas {
+    font-size: 16px;
+    font-weight: 400;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: block;
+    overflow: auto;
+    width: 300px;
+    height: 100vh;
+    padding: 20px;
+    transition: $transition;
+    transform: translateX(100%);
+    box-shadow: none;
+    @include breakpoint(small){
+        width: 400px;
+    }
+
+    &.offcanvas-open {
+        transform: translateX(0);
+    }
+        &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-black-1;
+        text-transform: capitalize !important;
+        margin-top: 10px;
+        margin-bottom: 30px;
+
+        &-text{
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 0;
+            & i{
+                font-size: 20px;
+                color: $color-black-1;
+                text-align: center;
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+        
+    }
+
+
+    // OffCanvas Mobile Menu
+    &.offcanvas-mobile-menu {
+        left: 0;
+        padding: 40px 40px;
+        transform: translateX(-100%);
+        &.offcanvas-open {
+            transform: translateX(0%);
+        }
+    }
+
+
+}

@@ -1,0 +1,41 @@
+/*****************************
+12 - Component - Company Logo
+*****************************/
+.company-logo{
+    &.m-t-100{
+        margin-top: 57px; 
+        @include breakpoint(medium){
+            margin-top: 80px;
+        } 
+        @include breakpoint(large){
+            margin-top: 100px;
+        }
+    }
+    &__area .slick-list{
+       margin-left: -70px;
+    }
+    &__area .slick-slide{
+       margin-left: 70px;
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__link {
+        display: block;
+        
+    }
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+        transition: all .3s ease;
+        opacity: .7;
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+
+}

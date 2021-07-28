@@ -1,0 +1,112 @@
+﻿@model FoodWeb.Models.ContactModel
+
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <main id="main-container" class="main-container">
+        <div class="container-fluid">
+            <div class="row">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <div class="contact-info-wrap gray-bg m-t-40">
+                        <div class="single-contact-info">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-info-dec">
+                                <a href="#">+92 334 7860477</a>
+                            </div>
+                        </div>
+                        <div class="single-contact-info">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <div class="contact-info-dec">
+                                <a href="mailto://mzaryab@email.com">mzaryab@email.com</a>
+                                <a href="mailto://foodweb.com">foodweb.com</a>
+                            </div>
+                        </div>
+                        <div class="single-contact-info">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-dec">
+                                <span>Address goes here,</span>
+                                <span>street, Crossroad 123.</span>
+                            </div>
+                        </div>
+                        <div class="contact-social m-t-40">
+                            <h5>Follow Us</h5>
+                            <div class="social-link">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7">
+                    <div class="contact-form gray-bg m-t-40">
+                        <div class="section-content">
+                            <h5 class="section-content__title">Get In Touch</h5>
+                            
+                        </div>
+                        <form class="contact-form-style" id="contact-form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-box__single-group">
+
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @placeholder = "Name" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-box__single-group">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Email" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-box__single-group">
+                                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @placeholder = "Subject" } })
+                                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-box__single-group">
+                                        @Html.TextAreaFor(model => model.Message, new { htmlAttributes = new { @placeholder = "Message" } })
+                                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                    </div>
+                                    <button class="btn btn--box btn--medium btn--radius-tiny btn--black btn--black-hover-green btn--uppercase font--bold m-t-30" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+}

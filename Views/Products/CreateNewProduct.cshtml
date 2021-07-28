@@ -1,0 +1,74 @@
+﻿@model FoodWeb.Models.Products
+
+@{
+    ViewBag.Title = "CreateNewProduct";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Create New Product
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Forms</a></li>
+            <li class="active">General Elements</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+                @using (Html.BeginForm("CreateNewProduct",
+                        "Products",
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">Add Product</h3>
+                        </div><!-- /.box-header -->
+                        <!-- form start -->
+                        <form role="form">
+                            <div class="box-body">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = " " })
+
+                                    @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ProductPrice, htmlAttributes: new { @class = " " })
+
+                                    @Html.EditorFor(model => model.ProductPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ProductPrice, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ProductPicture, htmlAttributes: new { @class = " " })
+
+                                    <input type="file" name="file" id="file">
+                                    @ViewBag.Message
+
+                                    @*@Html.EditorFor(model => model.ProductPicture, new { htmlAttributes = new { @class = "form-control" } })*@
+                                    @Html.ValidationMessageFor(model => model.ProductPicture, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div><!-- /.box-body -->
+                            <div class="form-group">
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>

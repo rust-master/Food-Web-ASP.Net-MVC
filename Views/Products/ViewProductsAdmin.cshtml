@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FoodWeb.Models.Products>
+
+@{
+    ViewBag.Title = "ViewProductsAdmin";
+    Layout = "~/Views/Shared/_LayoutAdminPage.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Products
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Simple</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Products List</h3>
+                        <div class="box-tools">
+                            <div class="input-group">
+                                <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search" />
+                                <div class="input-group-btn">
+                                    <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+                                <th>@Html.DisplayNameFor(model => model.ProductPrice)</th>
+                                <th>@Html.DisplayNameFor(model => model.ProductPicture)</th>
+                            </tr>
+                       @foreach (var item in Model)
+                        {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                                    <td><span class="label label-success">@Html.DisplayFor(modelItem => item.ProductPrice)</span></td>
+                                    <td><img class="product__img img-fluid" sty" width="200" height="200" src="~/@Html.DisplayFor(modelItem => item.ProductPicture)" alt=""></td>
+                                    
+                                    <td>
+                                        <button class="btn btn-block btn-success" >@Html.ActionLink("Edit", "EditProduct", new { id = item.id } , htmlAttributes: new { @class = "clbtn" })</button>
+                                        <button class="btn btn-block btn-info">@Html.ActionLink("Details", "Details", new { id = item.id })</button>
+                                        <button class="btn btn-block btn-danger">@Html.ActionLink("Delete", "Delete", new { id = item.id })</button>
+                                        
+                                    </td>
+                                </tr>
+                       }
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>

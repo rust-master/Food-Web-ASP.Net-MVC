@@ -1,0 +1,56 @@
+/*****************************
+30 - Page - Contact
+*****************************/
+
+#map{
+    width: 100%;
+    border: none;
+    height: 500px;
+}
+
+.contact-info-wrap,
+.contact-form {
+    padding: 25px 20px;
+    
+    @include breakpoint(small){
+        padding: 25px 30px;
+    }
+    @include breakpoint(medium){
+        padding: 30px 40px;
+    }
+}
+
+.single-contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-icon i{
+    margin-right: 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+.contact-info-dec{
+    a, span{
+        display: block;
+        color: $color-black-1;
+        text-decoration: none !important;
+    }
+    
+}
+
+.social-link li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-link a {
+    color: $color-black-1;
+    font-size: 22px;
+}

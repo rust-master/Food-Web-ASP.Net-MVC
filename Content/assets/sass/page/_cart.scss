@@ -1,0 +1,42 @@
+/*****************************
+25 - Page - Cart
+*****************************/
+
+.cart-table-button{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    @include breakpoint(medium){
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.total-shipping{
+    padding: 15px 0;
+    border-top: 1px solid $color-gray-1;
+    border-bottom: 1px solid $color-gray-1;
+    margin-top: 20px;
+}
+
+.total-cost{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    span{
+        font-weight: 500;
+    }
+}
+
+.shipping-cost li{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.grand-total{
+    color: $color-black-1;
+    display: flex;
+    justify-content: space-between;
+}

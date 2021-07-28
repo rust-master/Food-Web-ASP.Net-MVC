@@ -1,0 +1,20 @@
+/*****************************
+27 - Page - 404
+*****************************/
+.inner-input-icon,
+.page-not-found {
+	input{padding-right: 60px}
+}
+
+.error-section-top{
+	h1{
+		font-size: 100px;
+		color: $color-green;
+		font-weight: 700;
+	}
+
+	h4{
+		font-size: 32px;
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,142 @@
+/*****************************
+08 - Component - Banner
+*****************************/
+.banner{
+
+    &.m-t-100{
+        margin-top: 60px; 
+
+        @include breakpoint(medium){
+            margin-top: 80px;
+        } 
+
+        @include breakpoint(large){
+            margin-top: 100px;
+        }
+    }
+
+    & .col-12 > &__box{
+        margin-bottom: 30px;
+        @include breakpoint(medium){
+            margin-bottom: 0px;
+        }
+    }
+
+    & .col-12:last-child > &__box{
+        margin-bottom: 0;
+    }
+
+
+
+    &__box{
+        max-width: 100%;
+        overflow: hidden;
+        
+        &--single{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+    
+    &__link{display: block;}
+    
+    &__bg img{
+        width: 100%;
+        object-fit: cover;
+        height: 280px;
+        object-position: center;
+
+        @include breakpoint(small){height: 280px;}
+        @include breakpoint(medium){height: 335px;}
+        @include breakpoint(large){height: 360px;}
+        @include breakpoint(xlarge){height: 380px;}
+       
+    }
+    &__img{
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+
+        @include breakpoint(small){height: auto;}
+    }
+
+    // Border Inner Content Position
+    &__content{
+        padding: 0 30px;
+        @include breakpoint(xlarge){padding: 0 60px}
+
+        &--center{
+            top: 50%;
+            transform: translateY(-50%);
+            
+        }
+    }
+
+    // Banner Section - Font Size
+    &__title{
+        &--small{
+            font-size: 19px;
+            @include breakpoint(medium){
+                font-size: 24px;
+            }
+        }
+        &--large{
+            font-size: 19px;
+            line-height: 19px;
+            @include breakpoint(large){
+                font-size: 27px;
+                line-height: 27px;
+            }
+            @include breakpoint(xlarge){
+                font-size: 40px;
+                line-height: 40px;
+            }
+            @include breakpoint(xxlarge){
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+
+    }
+
+    &__box--single-text-style-1{
+        h6{
+            font-size: 16px;
+            color: $color-primary;
+        }
+    }
+    &__box--single-text-style-2{
+        h6{
+            font-size: 14px;
+            color: $color-secondary;
+        }
+
+        h1{
+            font-family: $font-secondary;
+            margin-bottom: 27px;
+            font-size: 25px;
+            line-height: 25px;
+
+            @include breakpoint(small){
+                font-size: 25px;
+                line-height: 25px;
+            }
+
+            @include breakpoint(medium){
+                font-size: 42px;
+                line-height: 42px;
+            }
+
+            @include breakpoint(large){
+                font-size: 50px;
+                line-height: 50px;
+            }
+
+            @include breakpoint(xlarge){
+                font-size: 60px;
+                line-height: 60px;
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+/*****************************
+28 - Page - My Account
+*****************************/
+
+.account-wrapper {
+    border: 2px solid #e5e5e5;
+    padding: 40px 30px;
+}
+
+.my-account-menu .account-menu-list li a {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    margin-top: -1px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    text-decoration: none;
+}
+
+.my-account-menu .account-menu-list li a:hover,
+.my-account-menu .account-menu-list li a.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.my-account-dashboard .welcome-dashboard p a:hover {
+    color: #e52e06;
+}
+
+.my-account-tab .account-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.my-account-details .account-details .title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+}
+
+.account-table .table thead tr th {
+    border: 1px solid #e5e5e5;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    padding: 8px 15px;
+}
+
+.account-table .table tbody tr td {
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+    vertical-align: middle;
+    border: 1px solid #e5e5e5;
+}
+
+.account-table .table thead tr th.name {
+    min-width: 140px;
+}
+
+.account-table .table thead tr th.date {
+    min-width: 130px;
+}
+
+.single-form select, .single-form textarea, .single-form input {
+    width: 100%;
+    font-size: 14px;
+    height: 40px;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    padding: 0 15px;
+    margin-top: 12px;
+    outline: none;
+}

@@ -1,0 +1,49 @@
+/*****************************
+26 - Page - Checkout
+*****************************/
+.your-order-section{
+    margin-top: 40px;
+    @include breakpoint(medium){
+        margin-top: 55px;
+    }
+    @include breakpoint(large){
+        margin-top: 0px;
+    }
+}
+
+
+.your-order-box{
+    padding: 40px;
+}
+
+.your-order-middle{
+    color: $color-gray;
+    padding: 20px 0;
+    border-top: 1px solid $color-gray-1;
+    border-bottom: 1px solid $color-gray-1;
+    margin: 20px 0;
+}
+
+.your-order-total{
+    padding: 20px 0;
+    border-top: 1px solid $color-gray-1;
+    border-bottom: 1px solid $color-gray-1;
+    margin: 20px 0;
+}
+
+.payment-accordion h4 a {
+    color: $color-black-1;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.panel-body{
+    color: $color-gray;
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.open-create-account,
+.open-shipping-account{display: none;}

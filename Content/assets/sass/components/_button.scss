@@ -1,0 +1,235 @@
+/*****************************
+05 - Component - Button
+*****************************/
+
+// Button Normal
+.btn{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 14px;
+    outline: none;
+    transition: all .3s ease;
+    border-radius: 0;
+    padding: 0;
+    transition: $transition3ms;
+
+    &--icon{
+        &-left{
+            i{padding-left: 10px;}
+        }
+        &-right{
+            i{padding-right: 10px;}
+        }
+    }
+
+    &:focus{
+        box-shadow: none;
+    }
+
+    // Button Style
+    &--box{
+        display: inline-block;
+    }
+
+    &--block{
+        display: block;
+    }
+
+    &--round{
+        border-radius: 50%;
+
+        &-size-small{
+            height: 45px;
+            width: 45px;
+            line-height: 45px;
+        }
+
+    }
+
+    &--radius{
+        border-radius: 30px;
+    }
+
+    &--radius-tiny{
+        border-radius: 3px;
+    }
+
+    &-transparent{
+        background-color: transparent;
+    }
+
+    &--border{
+        &-black{
+            border: 1px solid $color-secondary;
+            &-hover-green:hover{
+                color: $color-white;
+                background: $color-primary;
+                border-color: $color-primary;
+            }
+        }
+        &-gray{
+            border: 1px solid $color-white-3;
+            &-hover-green:hover{
+                color: $color-white;
+                background: $color-primary;
+                border-color: $color-primary;
+            }
+        }
+        &-green{
+            color: $color-primary;
+            border: 1px solid $color-primary;
+            &-hover-green:hover{
+                color: $color-white;
+                background: $color-primary;
+                border-color: $color-primary;
+            }
+        }
+    }
+
+    // Button Size
+    &--long{
+        width: 240px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 16px;
+
+        @include breakpoint(large){width: 285px;}
+
+    }
+
+    &--large{
+        padding: 15px 30px;
+        @include breakpoint(medium){ padding: 22px 45px;}
+        
+    }
+    
+    &--medium{
+        padding: 8px 20px;
+        @include breakpoint(large){padding: 15px 35px;}
+    }
+
+    &--small{
+        padding: 14px 20px;
+        @include breakpoint(medium){padding: 14px 20px;}
+    }
+
+    &--tiny{
+        padding: 5px 15px;
+    }
+
+    // Button Color
+    &--gray{
+        background: $color-white-3;
+        &-hover-green{
+            color: $color-white;
+            &:hover{ 
+                color: $color-white;
+                background: $color-primary;
+            }
+        }
+    }
+    &--black{
+        background: $color-black-1;
+        &-hover-green{
+            color: $color-white;
+            &:hover{ 
+                color: $color-white;
+                background: $color-primary;
+            }
+        }
+    }
+    &--green{
+        background: $color-primary;
+        color: $color-white;
+        &-hover-black{
+            color: $color-white;
+            &:hover{ 
+                color: $color-white;
+                background: $color-secondary;
+            }
+        }
+    }
+
+    &.color-green{
+        color: $color-primary;
+        &:hover{color: $color-primary;}
+    }
+    
+}
+
+button.btn--block{
+    width: 100%;
+}
+
+button.close{
+    font-weight: 300;
+    font-size: 14px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid $color-gray;
+}
+
+.link{
+    &--gray{
+        color: $color-gray;
+        text-decoration: none !important;
+        font-weight: 500;
+        &:hover{
+            color: $color-primary;
+        }
+    }
+    &--green{
+        color: $color-green;
+        text-decoration: none !important;
+        font-weight: 500;
+        &:hover{
+            color: $color-green;
+        }
+    }
+
+    &--icon-left{
+        display: inline-flex;
+        align-items: center;
+        i{margin-right: 10px;}
+    }
+
+    &--icon-right{
+        display: inline-flex;
+        align-items: center;
+        i{margin-left: 10px;}
+    }
+}
+
+.nametag {
+    display: flex;
+    span{
+        font-weight: 700;
+        margin-right: 15px;
+    }
+
+   &__list {
+
+       li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+       a {
+            color: $color-gray-2;
+            text-decoration: none !important;
+            transition: $transition3ms;
+
+            &:hover{color: $color-red;}
+        }
+    }
+}
+
+.internal-link{
+    color: $color-white;
+    margin-left: 30px;
+    transition: $transition3ms; 
+    &:hover{color: $color-orange;}
+}

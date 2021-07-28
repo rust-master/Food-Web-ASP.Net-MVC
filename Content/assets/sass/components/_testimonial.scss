@@ -1,0 +1,72 @@
+/*****************************
+10 - Component - Testimonial
+*****************************/
+.testimonial{
+    &.m-t-100{
+        margin-top: 60px; 
+
+        @include breakpoint(medium){
+            margin-top: 80px;
+        } 
+
+        @include breakpoint(large){
+            margin-top: 100px;
+        }
+    }
+
+    &__bg img{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 505px;
+        @include breakpoint(small){
+            height: 460px;
+        }
+        @include breakpoint(medium){
+            height: 465px;
+        }
+        @include breakpoint(large){
+            height: 565px;
+        }
+        @include breakpoint(xlarge){
+            height: auto;
+        }
+    }
+
+    &__desc{
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 22px;
+        font-style: italic;
+        padding: 0 15px;
+        @include breakpoint(medium){
+            font-size: 16px;
+            line-height: 30px;
+            padding: 0 95px;
+        }
+        @include breakpoint(large){
+            font-size: 17px;
+            line-height: 30px;
+            padding: 0 145px;
+        }
+        
+    }
+
+    &__info{
+        &--user{
+            font-size: 14px;
+            color: #0063d1;
+            line-height: 25px;
+            font-weight: 700;
+            text-transform: capitalize;
+            margin: 0 auto;
+        }
+
+        &--desig{
+            font-size: 14px;
+            line-height: 16px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+}

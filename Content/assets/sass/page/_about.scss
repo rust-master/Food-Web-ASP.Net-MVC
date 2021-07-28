@@ -1,0 +1,56 @@
+/*****************************
+32 - Page - Contact
+*****************************/
+
+.about-top{
+	.about-content{
+		margin-top: 40px;
+		@include breakpoint(medium){margin-top: 0;}
+
+		h4{font-family: $font-secondary;}
+	}
+}
+
+.skill-progressbar{
+	margin-bottom: 35px;
+	&:last-child{margin-bottom: 0}
+}
+
+
+.team{
+	&-single{
+		background: $color-white;
+	    margin: 0 auto;
+	    text-align: center;
+	    padding: 20px 30px 45px 30px;
+	}
+
+	&-img img{margin: 0 auto;}
+
+	&-social {
+	    width: 100%;
+	    background: $color-white;
+	    bottom: -22px;
+	    transition: $transition3ms;
+	    opacity: 0;
+	    visibility: hidden;
+	}
+
+	&-social li {
+	    display: inline-block;
+	    margin-right: 10px;
+	    &:last-child{margin-right: 0}
+	}
+
+	&-social a{
+	    color: $color-black-1;
+	    transition: $transition3ms;
+	    &:hover{color: $color-red}
+	}
+
+	&-single:hover &-social{
+		bottom: 0px;
+		opacity: 1;
+	    visibility: visible;
+	}
+}

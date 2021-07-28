@@ -1,0 +1,129 @@
+/***********
+Quantity CSS - Style !
+*************/
+.value-button {
+  display: inline-block;
+  margin: 0px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+form.quantity-scale #decrease,
+form.modal-quantity-scale #modal-decrease {
+  margin-right: -4px;
+}
+
+form.quantity-scale #increase,
+form.modal-quantity-scale #modal-increase {
+  margin-left: -4px;
+}
+
+form.quantity-scale #input-wrap,
+form.modal-quantity-scale #modal-input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number,
+input#modal-number {
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  margin: 0px;
+  width: 180px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/***********
+Quantity CSS - STyle 2
+*************/
+.quantity {
+  position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 70px;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button i{font-size: 14px;}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}

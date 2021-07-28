@@ -1,0 +1,363 @@
+/*****************************
+41 - Layout - Slider Customize
+*****************************/
+
+
+// Slider Gap
+.gap{
+    // Slider Gap in Column to Left-Right
+    &__col{
+        // Margin Left-Right - 30px
+        &--30{
+            // the parent
+            .slick-list {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+            // the slides
+            .slick-slide {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+    }
+    
+    // Slider Gap in Row to Top to Bottom
+    &__row{
+        // Margin Bottom - 30px
+        &--30{
+            .slick-slide {
+                & > div{ 
+                    margin-bottom: 30px;
+                   &:last-child{margin-bottom: 0;}
+                }
+            }
+        }
+
+        // Margin Bottom - 40px
+        &--40{
+            .slick-slide {
+                & > div{ 
+                    margin-bottom: 40px;
+                   &:last-child{margin-bottom: 0;}
+                }
+            }
+        }
+    }
+}
+
+// Slider Dot's Fix and Style
+.slider-dot-fix{
+    & .slick-dots li button {
+        text-indent: -9999px;
+        display: inline-block;
+    }
+}
+
+// Dot Gap space
+.dot-gap{
+    // Horizontal Gap
+    &__X{
+        // 5px Gap
+        &--5{
+            & .slick-dots li{
+                margin-right: 5px;
+                &:last-child{margin-right: 0;}
+            }
+        }
+        &--10{
+            & .slick-dots li{
+                margin-right: 10px;
+                &:last-child{margin-right: 0;}
+            }
+        }
+    }
+
+    // Vertical Gap
+    &__Y{
+        // 30px gap
+        &--30{
+            .slick-dots{
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+// Slider Dot's Style
+.slider-dot{
+    & .slick-dots{
+        display: flex;
+        li{
+            display: inline-block !important; 
+        }
+    }
+
+    &.slider-dot--start{
+         .slick-dots{
+            justify-content: flex-start;
+        }
+    }
+    &.slider-dot--center{
+        .slick-dots{
+            justify-content: center;
+        }
+    }
+    
+    // Slider Dot's Size
+    &-size--medium{
+        .slick-dots li button{
+            width: 15px;
+            height: 15px;
+        }
+        
+    }
+
+    &-size--small{
+        .slick-dots li button{
+            width: 12px;
+            height: 12px;
+        }
+        
+    }
+
+
+    // Slider Dot's Shape
+    &-circle{
+        .slick-dots li button{border-radius: 50%;}
+    }
+
+
+    // Slider Dot's Border
+    &-style--border{
+        .slick-dots li button{
+            border: 1px solid;
+        }
+    }
+
+
+    // Slider Dot's Border Color
+    &-style--border-black-active-red{
+        .slick-dots li button{
+            border-color: $color-black-1;
+        }
+        .slick-dots li.slick-active button{
+            border-color: $color-red;
+        }
+    }
+
+    &-style--border-black-active-golden{
+        .slick-dots li button{
+            border-color: $color-black-1;
+        }
+        .slick-dots li.slick-active button{
+            border-color: $color-golden;
+        }
+    }
+    
+    // Slider Dot's Fill
+    &-style--fill{
+        .slick-dots li button{
+            background: $color-white;
+        }
+    }
+
+    // Slider Dot's Fill Color
+    &-style--fill-white-active-white{
+        .slick-dots li button{
+            background: rgba($color-white, .3);
+        }
+        .slick-dots li.slick-active button{
+            background: $color-white;
+        }
+    }
+    &-style--fill-white-active-green{
+        .slick-dots li button{
+            background: $color-white;
+        }
+        .slick-dots li.slick-active button{
+            background: $color-green;
+        }
+    }
+}
+
+// Hero Image Arrow Navigation
+.hero-slider__arrow {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    color: $color-secondary;
+    background: transparent;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition3ms;
+    font-size: 24px;
+    &--left {left: 60px;}
+    &--right {right: 60px;}
+
+    &:hover{color: $color-primary;}
+}
+
+.hero:hover .hero-slider__arrow{
+    visibility: visible;
+    opacity: 1;
+    &--left {
+        left: 20px;
+        @include breakpoint(xxlarge){left: 70px;} 
+
+    }
+    &--right {
+        right: 20px;
+        @include breakpoint(xxlarge){right: 70px;} 
+    }
+}
+
+
+// Hero Image Dot Navigation
+.hero .slick-dots{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+    
+// Default Arrow Navigation
+.default-slider{
+    &__arrow{
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        color: $color-black-1;
+        font-size: 24px;
+        line-height: 24px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition3ms;
+        z-index: 99;
+        
+        i{font-size: 24px;}
+
+        &--left {
+            left: calc(0% + 20px);
+        }
+
+        &--right {
+            right: calc(0% + 20px);
+        }
+    }
+
+    &:hover &__arrow{
+        opacity: 1;
+        visibility: visible;
+        
+        &--left {
+            left:  0;
+        }
+    
+        &--right {
+            right: 0;
+        }
+
+        &:hover{
+            color: $color-primary;
+        }
+
+        &.slick-disabled{
+            color: rgba($color-black-1, .6);
+        }
+    }
+
+}
+
+// Product Default Slider
+.product-default-slider{
+    .slick-slide{
+        transform: scale(.75);
+        transition: all .5s ease-out;
+        &.slick-active{
+            transform: scale(1);
+        }
+    }
+}
+
+
+// Product Gallery Slider
+.gallery__nav {
+    position: absolute;
+    color: $color-gray-1;
+    z-index: 99;
+    &-horizontal{
+        top: 50%;
+        transform: translateY(-50%);
+        &--right{right: -15px;}
+        &--left{left: -15px;}
+    }
+
+    &-vertical{
+        left: 50%;
+        transform: translateX(-50%);
+        &--up{top: -20px;}
+        &--down{bottom: -20px;}
+    }
+}
+
+
+// Inner Arrow Navigation
+.inner-slider{
+    &__arrow{
+        width: 30px;
+        height: 30px;
+        background: $color-white;
+        color: $color-black-1;
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        border: 1px solid $color-black-1;
+        transition: $transition3ms;
+        z-index: 99;
+        line-height: 18px;
+        
+        i{font-size: 18px;}
+
+        &--left {
+            left: calc(0% + 5px)
+        }
+
+        &--right {
+            right: calc(0% + 5px);
+            
+        }
+    }
+
+    &:hover &__arrow{
+    
+        opacity: 1;
+        visibility: visible;
+        
+        &--left {
+            left: calc(0% + 15px);;
+        }
+    
+        &--right {
+            right: calc(0% + 15px);
+        }
+    }
+}
+
+.inner-slider-grid-4{
+    .slick-list{margin-right: -20px;}
+    .slick-slide{margin-right: 20px;}
+}

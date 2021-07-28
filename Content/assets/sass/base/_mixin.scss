@@ -1,0 +1,98 @@
+// Absolute Position Center
+@mixin absolute-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+@mixin absolute-center-vertical{
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin absolute-center-horizontal{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Background-cover Image
+@mixin bg-cover{
+    background : {
+        color: $color-light-green;
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+    }
+}
+
+
+
+
+@mixin object-fit-img{
+    object-fit: cover;
+    width: 100%;
+}
+
+// Slider Navigation Vertical Center
+@mixin arrow__nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// Slider Navigation Vertical Center
+@mixin border-around{
+   border: 1px solid $color-white-3;
+   border-radius:3px;
+}
+
+@mixin box-shadow {
+    box-shadow: 0 2px 2px 0 rgba($color-black, .15);
+}
+
+@mixin breakpoint($point) {
+
+    // 576 to Upper
+    @if $point == xsmall {
+        @media (min-width: 360px) { 
+            @content ; 
+        }
+    }
+
+    // 576 to Upper
+    @if $point == small {
+        @media (min-width: 576px) { 
+            @content ; 
+        }
+    }
+
+    // 768 to Upper
+    @if $point == medium {
+        @media (min-width: 768px) { 
+            @content ; 
+        }
+    }
+
+    // 998 to Upper
+    @if $point == large {
+        @media (min-width: 992px) { 
+            @content ; 
+        }
+    }
+
+    // 1200 to Upper
+    @if $point == xlarge {
+        @media (min-width: 1200px) { 
+            @content ; 
+        }
+    }
+
+    // 1367 to Upper
+    @if $point == xxlarge {
+        @media (min-width: 1566px) { 
+            @content ; 
+        }
+    }
+
+}
+

@@ -1,0 +1,33 @@
+/*****************************
+07 - Component - CMS
+*****************************/
+
+.cms{
+    &.m-t-100{
+        margin-top: 60px;
+        @include breakpoint(medium){margin-top: 80px;}
+        @include breakpoint(large){margin-top: 100px;}
+    }
+
+    &__icon{
+        font-size: 40px;
+        margin-bottom: 13px;
+        color: $color-gray;
+    }
+
+    &__title{
+        font-family: $font-secondary;
+        text-transform: capitalize;
+        font-size: 18px;
+        margin-bottom: 20px;
+
+        @include breakpoint(medium){font-size: 16px;}
+        @include breakpoint(large){font-size: 22px;}
+    }
+
+    .col-12{
+       margin-bottom: 40px;
+       &:last-child{margin-bottom: 0;}
+       @include breakpoint(large){margin-bottom: 0;}
+    }
+}

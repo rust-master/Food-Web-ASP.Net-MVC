@@ -1,0 +1,101 @@
+/*****************************
+40 - Layout - Addcart Offcanvas
+*****************************/
+
+// Header Checkout Popup Box
+
+.offcanvas-add-cart{
+    background: $color-white;
+    overflow-y: auto;
+    
+    &__list {
+        display: flex;
+        font-size: 14px;
+        padding: 20px 0;
+        margin-bottom: 20px;
+        border-bottom: 1px solid  $color-white-3;
+        border-top: 1px solid $color-white-3;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__img-box {
+        margin-right: 15px;
+        overflow: hidden;
+    }
+
+    &__img{
+        width: 100%;
+    }
+
+    &__link{
+        display: block;
+        color: $color-secondary;
+        &:hover{color: $color-primary}
+    }
+
+    &__detail  {
+        span{ display: block;}
+    }
+
+    &__item-dismiss {
+        font-size: 14px;
+        color: $color-gray;
+        background: transparent;
+        &:hover{color: $color-red}
+    }
+
+    &__item-count {
+        left: 0;
+        top: 0;
+        color: $color-white;
+        background: $color-primary;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 50%;
+    }
+
+    &__price {
+        color: $color-black-1;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    &__info {
+        font-size: 12px;
+        color: #777;
+    }
+
+    &__checkout-list {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__checkout-info {
+        padding-top: 25px;
+    }
+    
+    &__checkout-left-info {
+        color: #777;
+    }
+    
+    &__checkout-right-info {
+        font-weight: 600;
+        color: $color-silver;
+    }
+
+    &__btn-checkout{
+        margin-top: 50px;
+    }
+
+    &__checkout-box-bottom{
+        padding-bottom: 15px;
+    }
+}

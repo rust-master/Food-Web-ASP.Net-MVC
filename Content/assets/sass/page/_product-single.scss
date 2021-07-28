@@ -1,0 +1,54 @@
+/*****************************
+23 - Page - Product Single
+*****************************/
+
+.product-details-tab-box{
+	border: 1px solid $color-white-3;
+	padding: 30px 20px;
+	@include breakpoint(medium){
+		padding: 30px 40px;
+	}
+}
+
+.product-modal-group{
+	font-size: 12px;
+	i{font-size: 18px;}
+	li {
+		display: inline-block;
+		margin-right: 15px;
+		&:last-child{margin-right: 0;}
+		margin-bottom: 10px;
+		@include breakpoint(small){margin-bottom: 0;}
+	}
+}
+
+.review-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > * {
+    	margin-right: 30px;
+	}
+
+	& > *:last-child {
+    	margin-right: 0;
+	}
+}
+
+
+.product-dis{
+	&__img{
+		display: inline-block;
+		border: 1px solid $color-gray-1;
+	}
+
+	&__title{font-weight: 500;}
+
+	&__text{
+		font-weight: 300;
+	}
+}
+
+
+

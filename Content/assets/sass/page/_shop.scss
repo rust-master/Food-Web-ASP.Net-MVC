@@ -1,0 +1,42 @@
+/*****************************
+22 - Page - Shop
+*****************************/
+.shop{
+    &__list-link{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        @include breakpoint(medium){
+            flex-direction: column;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+        }
+        li{
+            a{display: block;}
+        }
+    }
+
+    &-grid .product__default--single{
+        margin-top: 25px;
+    }
+
+    &-list{
+        & .product__box--list{
+            margin-top: 25px;
+        }
+    }
+
+    
+}
+
+.border-right.pos-absolute{
+    border-right: none!important;
+
+    @include breakpoint(medium){
+        border-right: 1px solid #dee2e6!important;
+        height: 100%;
+        right: 0;
+    }
+}

@@ -1,0 +1,131 @@
+/*****************************
+18 - Component - Gallery
+*****************************/
+.product-gallery-box{
+    padding: 0 20px;
+    &__vertical{
+        display: flex;
+        align-items: center;
+    }
+    &__tab-left{
+        flex-direction: row-reverse;
+    }
+
+    & .swiper-slide{
+        height: 100% !important;
+    }
+}
+
+.product-gallery-box--gallery{
+    float: left;
+    img{width: 50%;}
+}
+
+
+
+.gallery{
+    &--right{width: 80%};
+    &--left{width: 20%};
+}
+
+.product-image{
+    &--large{
+        border: 1px solid $color-white-3 !important;
+    }
+   &--large .img-fluid{
+    max-width: 100% !important
+   }
+   &--gallery .img-responsive {
+    margin: 10px;
+    }
+}
+
+
+.modal-product-image--thumb,
+.product-image--thumb{ 
+    &-horizontal{
+        margin-top: 20px;
+        .slick-list{margin-right: -10px ;}
+        .slick-slide{margin-right: 10px;}
+    }
+    &-vertical{
+        .slick-list{margin-bottom: -10px ;}
+        .slick-slide{margin-bottom: 10px;}
+    }
+    img{
+        cursor: pointer;
+        border: 1px solid rgba($color-silver , .2) !important;
+        transition: $transition3ms;
+        &:hover{
+            border-color: $color-primary !important;
+        }
+        
+    }
+}
+
+.text-reference{
+    font-size: 14px;
+    color: $color-gray;
+}
+
+.product__stock{
+    font-weight: 700;
+    color: $color-gray-1;
+    i{color: $color-green;}
+}
+
+.product-var  {
+    border-top: 1px solid $color-white-3;
+    border-bottom: 1px solid $color-white-3;
+
+    &__item{
+        margin-bottom: 30px;
+    }
+    
+    &__text{
+        display: block;
+        font-weight: 500;
+    }
+}
+
+//Payment Icon
+.payment-icon{
+    li{
+        display: inline-block;
+        margin-right: 5px;
+        &:last-child{margin-right: 0;}
+        margin-bottom: 10px;
+		@include breakpoint(small){margin-bottom: 0;}
+    }
+}
+
+// Peoduct Details Social Link
+.product-social {
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            color: $color-secondary;
+            width: 40px;
+            height: 40px;
+            display: block;
+            border: 1px solid $color-white-3;
+            text-align: center;
+            line-height: 40px;
+            transition: all .3s ease;
+            border-radius: 50%;
+
+            &:hover{
+                color: $color-white;
+                background: $color-green;
+                border: 1px solid transparent;
+            }
+           
+        }
+}
